@@ -19,8 +19,6 @@
         <log4j.version>2.20.0</log4j.version>
         <slf4j.version>2.0.9</slf4j.version>
         <lang3.version>3.13.0</lang3.version>
-        <lombok.version>1.18.30</lombok.version>
-        <icu4j.version>63.1</icu4j.version>
         <browser>chrome</browser>
         <base.url>https://otus.ru</base.url>
 
@@ -56,25 +54,13 @@
             <artifactId>commons-lang3</artifactId>
             <version>${lang3.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.ibm.icu</groupId>
-            <artifactId>icu4j</artifactId>
-            <version>${icu4j.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.2.1</version>
                 <configuration>
                     <systemPropertyVariables>
                         <browser.name>${browser}</browser.name>
@@ -85,7 +71,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.11.0</version>
             </plugin>
         </plugins>
     </build>

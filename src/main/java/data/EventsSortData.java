@@ -1,8 +1,6 @@
 package data;
 
-import lombok.Getter;
 
-@Getter
 public enum EventsSortData {
     OPENWEB("Открытый вебинар", "Открытый вебинар");
 
@@ -14,5 +12,12 @@ public enum EventsSortData {
         this.namePage = namePage;
     }
 
+    public String getNamePage() {
+        return namePage;
+    }
+
+    public String getNameFilter() {
+        return nameFilter;
+    }
 }
 

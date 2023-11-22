@@ -3,9 +3,11 @@ package extensions;
 import annotation.Driver;
 import factory.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.extension.*;
+import org.junit.jupiter.api.extension.AfterEachCallback;
+import org.junit.jupiter.api.extension.BeforeAllCallback;
+import org.junit.jupiter.api.extension.BeforeEachCallback;
+import org.junit.jupiter.api.extension.ExtensionContext;
 import org.openqa.selenium.WebDriver;
-
 
 import java.lang.reflect.Field;
 import java.security.PrivilegedAction;
@@ -13,14 +15,14 @@ import java.time.Duration;
 import java.util.HashSet;
 import java.util.Set;
 
-
 import static java.security.AccessController.doPrivileged;
 
 
-public class UIExtension implements BeforeAllCallback, AfterEachCallback, BeforeEachCallback{
+public class UIExtension implements BeforeAllCallback, AfterEachCallback, BeforeEachCallback {
 
 
     public WebDriver driver;
+
     private Set<Field> getAnnotatedFields(ExtensionContext extensionContext) {
         Set<Field> set = new HashSet<>();
         Class<?> testClass = extensionContext.getTestClass().get();
@@ -34,7 +36,6 @@ public class UIExtension implements BeforeAllCallback, AfterEachCallback, Before
         }
         return set;
     }
-
 
 
     @Override
@@ -67,7 +68,7 @@ public class UIExtension implements BeforeAllCallback, AfterEachCallback, Before
 
 
     @Override
-    public void afterEach(ExtensionContext extensionContext){
+    public void afterEach(ExtensionContext extensionContext) {
         if (driver != null) {
             driver.close();
             driver.quit();

@@ -25,7 +25,8 @@ public class Waiters {
         }
     }
     public void waitForAttributeNotContains(WebElement loc, String atr, String value) {
-        Assertions.assertTrue(waitForCondition(ExpectedConditions.not(ExpectedConditions.attributeContains(loc, atr, value))));
+        Assertions.assertTrue(waitForCondition(ExpectedConditions.not
+                (ExpectedConditions.attributeContains(loc, atr, value))));
     }
 
 }

@@ -1,5 +1,5 @@
 package data.menu;
 
-public interface ISubMenu {
+public interface IMenu {
     String getName();
 }

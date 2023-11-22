@@ -19,6 +19,7 @@ public class CourseCatalog extends AbsPageObject {
     private List<WebElement> coursesListLoc;
     private final String courseSel = "a[href='/lessons/%s']";
 
+
     public CourseCatalog checkVisibleCourses() {
 
 
@@ -37,5 +38,6 @@ public class CourseCatalog extends AbsPageObject {
         String selector = String.format(courseSel, courseName);
         $(By.cssSelector(selector)).click();
     }
+
 }
 

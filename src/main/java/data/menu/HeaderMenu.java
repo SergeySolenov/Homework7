@@ -1,8 +1,7 @@
 package data.menu;
 
-import lombok.Getter;
 
-@Getter
+
 public enum HeaderMenu {
 
     LEARN("Обучение");
@@ -13,4 +12,7 @@ public enum HeaderMenu {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
 }

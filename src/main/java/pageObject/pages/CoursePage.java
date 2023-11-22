@@ -1,9 +1,5 @@
 package pageObject.pages;
 
-import data.courses.CoursesDuration;
-import data.courses.CoursesFormat;
-import data.courses.CoursesSubTitle;
-import data.courses.CoursesTitle;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,23 +9,23 @@ public class CoursePage extends AbsBasePage {
         super(driver, "/");
     }
 
-    public CoursePage checkTitle(String expected, CoursesTitle coursesTitle) {
-        Assertions.assertEquals(expected, $(By.cssSelector(coursesTitle.getName())).getText());
+    public CoursePage checkTitle(String expected, String coursesTitle) {
+        Assertions.assertEquals(expected, $(By.cssSelector(coursesTitle)).getText());
         return this;
     }
 
-    public CoursePage checkSubTitle(String expected, CoursesSubTitle coursesSubTitle) {
-        Assertions.assertEquals(expected, $(By.cssSelector(coursesSubTitle.getName())).getText());
+    public CoursePage checkSubTitle(String expected, String coursesSubTitle) {
+        Assertions.assertEquals(expected, $(By.cssSelector(coursesSubTitle)).getText());
         return this;
     }
 
-    public CoursePage checkDuration(String expected, CoursesDuration coursesDuration) {
-        Assertions.assertEquals(expected, $(By.xpath(coursesDuration.getName())).getText());
+    public CoursePage checkDuration(String expected, String coursesDuration) {
+        Assertions.assertEquals(expected, $(By.xpath(coursesDuration)).getText());
         return this;
     }
 
-    public CoursePage checkFormat(String expected, CoursesFormat coursesFormat) {
-        Assertions.assertEquals(expected, $(By.xpath(coursesFormat.getName())).getText());
+    public CoursePage checkFormat(String expected, String coursesFormat) {
+        Assertions.assertEquals(expected, $(By.xpath(coursesFormat)).getText());
         return this;
     }
 }

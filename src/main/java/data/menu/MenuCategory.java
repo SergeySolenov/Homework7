@@ -1,9 +1,7 @@
 package data.menu;
 
-import lombok.Getter;
 
-@Getter
-public enum MenuCategory implements ISubMenu{
+public enum MenuCategory implements IMenu {
     TEST("Тестирование"),
     EVENTS_CALENDAR("Календарь мероприятий");
     private final String name;
@@ -12,4 +10,8 @@ public enum MenuCategory implements ISubMenu{
         this.name = name;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
 }
