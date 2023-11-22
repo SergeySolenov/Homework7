@@ -33,7 +33,7 @@ public class LearningCoursesTest {
         log.info("Главная страница");
         new MainPage(driver).open();
         log.info("Раздел обучение");
-        new HeaderMenu(driver).moveToHeader(LEARN);
+        new moveHeader(driver).moveToHeader(LEARN);
         log.info("Раздел QA");
         new HeaderPopup(driver)
                 .popupBeVisible(LEARN)
@@ -52,11 +52,10 @@ public class LearningCoursesTest {
         log.info("Главная страница");
         new MainPage(driver).
                 open();
-        HeaderPopup headerSubMenuPopup = new HeaderPopup(driver);
-        new HeaderMenu(driver)
+        new moveHeader(driver)
                 .moveToHeader(LEARN);
         log.info("Раздел тестирования");
-        headerSubMenuPopup
+        new HeaderPopup(driver)
                 .popupBeVisible(LEARN)
                 .clickSubMenu(testing, TEST);
         log.info("Выбираем PRO курс");
@@ -72,11 +71,11 @@ public class LearningCoursesTest {
         log.info("Главная страница");
         new MainPage(driver)
                 .open();
-        HeaderPopup headerSubMenuPopup = new HeaderPopup(driver);
-        new HeaderMenu(driver)
+        new moveHeader(driver)
                 .moveToHeader(LEARN);
         log.info("Календарь мероприятий");
-        headerSubMenuPopup.popupBeVisible(LEARN)
+        new HeaderPopup(driver)
+                .popupBeVisible(LEARN)
                 .clickSubMenu(lessonCal, EVENTS_CALENDAR);
         log.info("Проверка карточек и дат мероприятий");
         new EventsCatalog(driver)
@@ -90,7 +89,7 @@ public class LearningCoursesTest {
         new MainPage(driver)
                 .open();
         HeaderPopup headerSubMenuPopup = new HeaderPopup(driver);
-        new HeaderMenu(driver)
+        new moveHeader(driver)
                 .moveToHeader(LEARN);
         log.info("Календарь мероприятий");
         headerSubMenuPopup.popupBeVisible(LEARN)
